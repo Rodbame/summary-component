@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+:root {
+  --bg_reaction: hsl(0, 100%, 67%);
+  --bg_memory: hsl(39, 100%, 56%);
+  --bg_verbal: hsl(166, 100%, 37%);
+  --bg_visual: hsl(234, 85%, 45%);
+
+  // Gradients colors
+  --gradient1: hsl(252, 100%, 67%);
+  --gradient2: hsl(241, 81%, 54%);
+  --gradient3: hsla(256, 72%, 46%, 1);
+  --gradient4: hsla(241, 72%, 46%, 0);
+
+  // Gradient puntuation
+  --gradientp1: hsla(256, 72%, 46%, 1);
+  --gradientp2: hsla(241, 72%, 46%, 0.04);
+
+  // Neutral colors
+  --neutral1: hsl(0, 0%, 98%);
+  --neutral2: hsl(221, 100%, 96%);
+  --neutral3: hsl(241, 100%, 89%);
+  --neutral4: hsl(224, 30%, 27%);
+
+  // fonts
+  --p_size: 18;
+
+  // Reaction colors
+  --bg_reaction: #fff6f5;
+  --bg_memory: #fffbf2;
+  --bg_verbal: #f2fafa;
+  --bg_visual: #f3f3fd;
+}
+
+body {
+  background: var(--neutral1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.card {
+  background: #fff;
+  height: 400px;
+  width: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.272);
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 30px;
+  .fview {
+    background: linear-gradient(to top, var(--gradient2) 15%, var(--gradient1));
+    border-radius: 25px;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: start;
+    text-align: center;
+    padding: 20px;
+    color: #cec3ff;
+    place-content: center;
+    gap: 21px;
+
+    .container_puntuation {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .puntuation {
+        background: linear-gradient(
+          to top,
+          var(--gradientp2) 20%,
+          var(--gradientp1)
+        );
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .current_puntuation {
+          font-size: 3em;
+          color: #fff;
+          font-weight: 800;
+        }
+      }
+    }
+    .qualification {
+      .great {
+        font-size: 1.5em;
+        color: #fff;
+      }
+    }
+    .description_puntuation {
+      width: 200px;
+    }
+  }
+  .sview {
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    grid-template-columns: 250px;
+    .summary {
+      text-align: left;
+      width: 100%;
+    }
+    .reaction_score {
+      background: var(--bg_reaction);
+      border-radius: 6px;
+      height: 40px;
+      display: flex;
+      gap: 5px;
+      .reaction {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 50%;
+        margin-left: 15px;
+        gap: 5px;
+      }
+      .puntuation_reaction {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 50%;
+        margin-right: 15px;
+      }
+    }
+    .memory_score {
+      background: var(--bg_memory);
+      border-radius: 6px;
+      height: 40px;
+      display: flex;
+      gap: 5px;
+      .memory {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 50%;
+        margin-left: 15px;
+        gap: 5px;
+      }
+      .puntuation_memory {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 50%;
+        margin-right: 15px;
+      }
+    }
+    .verbal_score {
+      background: var(--bg_verbal);
+      border-radius: 6px;
+      height: 40px;
+      display: flex;
+      gap: 5px;
+      .verbal {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 50%;
+        margin-left: 15px;
+        gap: 5px;
+      }
+      .puntuation_verbal {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 50%;
+        margin-right: 15px;
+      }
+    }
+    .visual_score {
+      background: var(--bg_visual);
+      border-radius: 6px;
+      height: 40px;
+      display: flex;
+      gap: 5px;
+      .visual {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 50%;
+        margin-left: 15px;
+        gap: 5px;
+      }
+      .puntuation_visual {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 50%;
+        margin-right: 15px;
+      }
+    }
+    .btn {
+      border: none;
+      height: 40px;
+      border-radius: 20px;
+      background: #303b59;
+      color: #fff;
+    }
+  }
+}
+
+@media (max-width: 620px) {
+  .card{
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+  "f"
+  "s"
+  ;
+  width: 100%;
+  height: 700px;
+  margin: 100px 0 10px 0;
+  .fview{
+    grid-area: f;
+
+  }
+  .sview{
+    grid-area: s;
+  }
+  }
+}
