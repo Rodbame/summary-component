@@ -214,26 +214,37 @@ body {
       border-radius: 20px;
       background: #303b59;
       color: #fff;
+      cursor: pointer;
+      transition: .3s;
+      &:hover{
+        background: #5b36ff;
+      }
     }
   }
 }
 
 @media (max-width: 620px) {
+  main{
+    width: 100%;
+    overflow: hidden;
+  }
   .card{
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: 
-  "f"
-  "s"
-  ;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 700px;
-  margin: 100px 0 10px 0;
+  height: 100vh;
+  margin: 0px 0 10px 0;
+  border-radius: 0;
   .fview{
-    grid-area: f;
+    border-radius: 0 0 30px 30px;
+    gap: 3px;
   }
   .sview{
-    grid-area: s;
+    border-radius: 0;
+    gap: 3px;
+    h2.summary{
+      font-size: 1rem;
+    }
   }
   }
 }
